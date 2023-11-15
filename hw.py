@@ -13,12 +13,12 @@ for j in range(1, 26):
 
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, "lxml")
-        all_products = soup.find_all("div", class_="css-oukcj3")
+        all_products = soup.find_all("div", class_="css-1sw7q4x")
 
         for product in all_products:
-            if product.find("div", class_="css-112xsl6"):
-                cond = product.find("span", class_="css-3lkihg")
-                title = product.find("h6", class_="css-16v5mdi er34gjf0")
+            if product.find("div", class_="css-1sw7q4x"):
+                cond = product.find("span", class_="css-1sw7q4x")
+                title = product.find("h6", class_="css-1sw7q4x")
                 print(cond.text, title.text)
                 cond = cond.text.replace(" ", " ")
                 with open("vinyl.txt", "a", encoding="utf-8") as file:
